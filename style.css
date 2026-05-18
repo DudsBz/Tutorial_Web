@@ -119,26 +119,40 @@ body {
     width: 100%;
 }
 
-.titulo-placeholder {
-    width: 70%;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
+/* Titulo principal do site — tag h1 */
+.hero-titulo {
+    font-size: 2rem;           /* tamanho grande — e o titulo mais importante da pagina */
+    font-weight: 700;          /* negrito forte */
+    color: #ffffff;            /* branco para contrastar com o fundo azul */
+    text-align: center;        /* centraliza o texto */
+    line-height: 1.3;          /* espacamento entre linhas confortavel */
 }
 
-.subtitulo-placeholder {
-    width: 50%;
-    height: 18px;
-    background-color: rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
+/* Subtitulo — tag p usada como linha de autoria */
+.hero-subtitulo {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75); /* branco com 75% de opacidade — mais discreto */
+    text-align: center;
 }
 
-.botao-placeholder {
-    width: 140px;
-    height: 40px;
-    background-color: #F27BBD;
-    border-radius: 6px;
-    opacity: 0.8;
+/* Botao "Comecar" — e um <a> estilizado visualmente como botao */
+.hero-botao {
+    display: inline-block;     /* permite definir padding e width no link */
+    margin-top: 0.4rem;        /* pequeno espaco acima do botao */
+    padding: 0.65rem 1.75rem;  /* espaco interno: cima/baixo e lados */
+    background-color: #F27BBD; /* rosa — cor de destaque do projeto */
+    color: #ffffff;            /* texto branco */
+    text-decoration: none;     /* remove o sublinhado padrao do link */
+    border-radius: 6px;        /* cantos arredondados */
+    font-size: 0.95rem;
+    font-weight: 600;          /* semi-negrito */
+    transition: background-color 0.2s, transform 0.2s; /* animacao suave no hover */
+}
+
+/* Efeito ao passar o mouse no botao */
+.hero-botao:hover {
+    background-color: #e0609f; /* rosa mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* sobe levemente — efeito de "levantar" */
 }
 
 
@@ -465,12 +479,14 @@ body {
         padding: 3rem 1rem;
     }
 
-    .titulo-placeholder {
-        width: 85%;
+    /* Titulo menor no celular para nao ficar grande demais */
+    .hero-titulo {
+        font-size: 1.5rem;
     }
 
-    .subtitulo-placeholder {
-        width: 65%;
+    /* Botao ocupa mais espaco no mobile para ficar facil de clicar */
+    .hero-botao {
+        padding: 0.7rem 2rem;
     }
 
     /* Secoes */
