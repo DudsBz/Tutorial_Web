@@ -1,0 +1,515 @@
+/* ==========================================
+   RESET BASICO
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #10439F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    z-index: 100;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-links li {
+    max-width: 180px;
+}
+
+.navbar-links li:last-child {
+    max-width: 150px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    transition: background-color 0.2s, transform 0.2s;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.navbar-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Botao hamburger - escondido no desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+    margin-top: 60px;
+    background-color: #10439F;
+    padding: 4rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.titulo-placeholder {
+    width: 70%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.subtitulo-placeholder {
+    width: 50%;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+}
+
+.botao-placeholder {
+    width: 140px;
+    height: 40px;
+    background-color: #F27BBD;
+    border-radius: 6px;
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   BLOCOS PLACEHOLDER GENERICOS
+   ========================================== */
+
+.placeholder-block {
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   SECOES
+   ========================================== */
+
+.secao {
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.secao:last-child {
+    border-bottom: none;
+}
+
+.secao-header {
+    margin-bottom: 1.5rem;
+}
+
+.secao-titulo {
+    width: 40%;
+    height: 20px;
+    background-color: #874CCC;
+    opacity: 0.3;
+}
+
+.secao-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* ==========================================
+   CARDS VAZIOS
+   ========================================== */
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card.vazio {
+    flex: 1 1 200px;
+    min-height: 120px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    border-top: 3px solid #C65BCF;
+    opacity: 0.7;
+}
+
+
+/* ==========================================
+   BLOCO DE CODIGO SIMULADO
+   ========================================== */
+
+.bloco-codigo {
+    width: 100%;
+    min-height: 80px;
+    background-color: #2b2b2b;
+    border-radius: 6px;
+    opacity: 0.15;
+}
+
+
+/* ==========================================
+   BOTAO DE SECAO
+   ========================================== */
+
+.botao-secao {
+    width: 120px;
+    height: 34px;
+    background-color: #F27BBD;
+    border-radius: 4px;
+    opacity: 0.5;
+}
+
+
+/* ==========================================
+   ALTERNANCIA DE COR DE FUNDO NAS SECOES
+   ========================================== */
+
+/* nth-child(even) seleciona as secoes de numero par (2ª, 4ª, 6ª...) */
+.secao:nth-child(even) {
+    background-color: #f2f0f5;
+}
+
+
+/* ==========================================
+   TITULO REAL DAS SECOES (h2)
+   ========================================== */
+
+/* Estilo do titulo h2 que substitui o placeholder de titulo */
+.secao-titulo-texto {
+    font-size: 1.6rem;       /* tamanho da fonte */
+    color: #10439F;          /* azul — mesma cor da navbar */
+    font-weight: 700;        /* negrito forte */
+    border-left: 4px solid #C65BCF; /* barra roxa na lateral esquerda */
+    padding-left: 0.75rem;   /* espaço entre a barra roxa e o texto */
+}
+
+
+/* ==========================================
+   PARAGRAFOS DO TUTORIAL
+   ========================================== */
+
+/* Estilo dos paragrafos de texto explicativo dentro das secoes */
+.secao-paragrafo {
+    font-size: 1rem;         /* tamanho de fonte confortavel para leitura */
+    line-height: 1.7;        /* espacamento entre linhas — facilita a leitura */
+    color: #444;             /* cinza escuro — mais suave que preto puro */
+    max-width: 720px;        /* limita a largura para nao ficar largo demais */
+}
+
+
+/* ==========================================
+   CODIGO INLINE
+   ========================================== */
+
+/* <code> dentro de um paragrafo — mostra trechinhos de codigo */
+.codigo-inline {
+    background-color: #ede9f7; /* fundo levemente roxo */
+    color: #5a189a;            /* texto roxo escuro */
+    font-family: monospace;    /* fonte de largura fixa — padrao para codigo */
+    font-size: 0.9rem;
+    padding: 0.1rem 0.4rem;    /* pequeno espaçamento interno */
+    border-radius: 4px;        /* cantos arredondados */
+}
+
+
+/* ==========================================
+   BLOCO DE CODIGO VISIVEL (com exemplo)
+   ========================================== */
+
+/* Caixa escura que envolve o exemplo de codigo CSS */
+.bloco-codigo-visivel {
+    background-color: #1e1e2e; /* fundo quase preto — estilo de editor de codigo */
+    border-radius: 8px;        /* cantos arredondados */
+    padding: 1rem 1.25rem;     /* espaco interno: cima/baixo e lados */
+    overflow-x: auto;          /* se o codigo for longo, aparece barra de rolagem horizontal */
+}
+
+/* Legenda acima do codigo ("Exemplo de codigo CSS:") */
+.bloco-codigo-legenda {
+    font-size: 0.78rem;        /* fonte pequena */
+    color: #a0aec0;            /* cinza claro */
+    margin-bottom: 0.5rem;     /* espaco entre a legenda e o codigo */
+    font-family: monospace;
+}
+
+/* <pre> preserva espacos e quebras de linha — essencial para exibir codigo */
+.bloco-codigo-pre {
+    margin: 0;                 /* remove a margem padrao do <pre> */
+    white-space: pre;          /* nao quebra as linhas automaticamente */
+}
+
+/* O <code> dentro do <pre> — texto do codigo em si */
+.bloco-codigo-pre code {
+    font-family: monospace;    /* fonte de largura fixa */
+    font-size: 0.9rem;
+    color: #cdd6f4;            /* azul claro — facil de ler no fundo escuro */
+    line-height: 1.6;          /* espacamento entre linhas do codigo */
+}
+
+
+/* ==========================================
+   CAIXA DE DEMONSTRACAO VISUAL (Media Query)
+   ========================================== */
+
+/* Caixa interativa que muda de cor conforme o tamanho da tela */
+.caixa-exemplo {
+    background-color: #10439F; /* azul quando a tela e larga */
+    color: white;
+    padding: 1.5rem 1rem;      /* espaco interno */
+    border-radius: 8px;
+    text-align: center;        /* centraliza o texto */
+    font-size: 1rem;
+    transition: background-color 0.3s; /* animacao suave ao mudar de cor */
+}
+
+/* Texto menor abaixo da mensagem principal */
+.caixa-exemplo-dica {
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+    opacity: 0.8;              /* levemente transparente */
+}
+
+
+/* ==========================================
+   REFERENCIAS
+   ========================================== */
+
+/* Bloco que agrupa as referencias bibliograficas */
+.secao-referencias {
+    border-top: 1px solid #e0e0e0; /* linha separadora acima */
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Titulo da lista de referencias */
+.referencias-titulo {
+    font-size: 0.95rem;
+    font-weight: 600;          /* semi-negrito */
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* Lista de links de referencias */
+.lista-referencias {
+    list-style: disc;          /* marcadores de lista (bolinhas) */
+    padding-left: 1.5rem;      /* recuo da lista para os marcadores aparecerem */
+    display: flex;
+    flex-direction: column;    /* um link abaixo do outro */
+    gap: 0.4rem;               /* espaco entre os itens */
+}
+
+/* Links de referencia */
+.link-referencia {
+    color: #10439F;            /* azul — cor padrao de link */
+    font-size: 0.95rem;
+    text-decoration: none;     /* remove o sublinhado padrao */
+    transition: color 0.2s;    /* animacao suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse no link */
+.link-referencia:hover {
+    color: #C65BCF;            /* muda para roxo ao passar o mouse */
+    text-decoration: underline; /* sublinhado aparece apenas no hover */
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    background-color: #10439F;
+    padding: 2rem 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.footer-bloco {
+    width: 150px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-linha {
+    width: 200px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    /* Mostra o botao hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Esconde os links por padrao no mobile */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #10439F;
+        padding: 1rem;
+        gap: 0.3rem;
+    }
+
+    /* Quando o menu esta aberto */
+    .navbar-links.aberto {
+        display: flex;
+    }
+
+    .navbar-links li a {
+        display: block;
+        padding: 0.6rem 1rem;
+    }
+
+    /* Hero ajustes */
+    .hero {
+        min-height: 40vh;
+        padding: 3rem 1rem;
+    }
+
+    .titulo-placeholder {
+        width: 85%;
+    }
+
+    .subtitulo-placeholder {
+        width: 65%;
+    }
+
+    /* Secoes */
+    .secao {
+        padding: 2rem 1rem;
+    }
+
+    .secao-titulo {
+        width: 60%;
+    }
+
+    /* Cards em coluna no mobile */
+    .card.vazio {
+        flex: 1 1 100%;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bloco {
+        width: 80%;
+    }
+}
+
+
+/* ==========================================
+   MEDIA QUERY EXCLUSIVA DA DEMONSTRACAO
+   (Esta e a media query que o tutorial ensina)
+   ========================================== */
+
+/* Quando a tela tiver 600px ou menos de largura,
+   a caixa de demonstracao muda de azul para roxo.
+   Isso e o mesmo comportamento explicado no exemplo de codigo da secao 1. */
+@media (max-width: 600px) {
+    .caixa-exemplo {
+        background-color: #C65BCF; /* roxo — muda a cor para mostrar o efeito */
+        font-size: 0.9rem;
+    }
+}

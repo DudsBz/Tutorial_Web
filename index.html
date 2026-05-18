@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutorial Web - Portfólio acadêmico sobre desenvolvimento web">
+    <title>Tutorial Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-logo"></div>
+
+        <!-- Botao hamburger para mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="#secao-1">Media Queries</a></li>
+            <li><a href="#secao-2">Layouts Flexíveis</a></li>
+            <li><a href="#secao-3">CSS Grid</a></li>
+            <li><a href="#secao-4">DOM e Eventos</a></li>
+            <li><a href="#secao-5">Interface de Formulário</a></li>
+            <li><a href="#secao-6">Funções</a></li>
+            <li><a href="#secao-7">Arrays e Objetos</a></li>
+            <li><a href="#secao-8">Assíncrono e APIs</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <!-- Bloco vazio representando titulo -->
+            <div class="placeholder-block titulo-placeholder">
+                <p>Tutorial sobre Desenvolvimento Web</p>
+            </div>
+
+            <!-- Bloco vazio representando subtitulo -->
+            <div class="placeholder-block subtitulo-placeholder">
+                <p>Por: Eduardo Leite Braz</p>
+            </div>
+
+            <!-- Bloco vazio representando botao -->
+            <div class="placeholder-block botao-placeholder">
+                <p>Começar</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== CONTEUDO PRINCIPAL - 8 SECOES ========== -->
+    <main>
+
+        <!-- SECAO 1 — Media Queries -->
+        <!-- Esta é a primeira seção do tutorial. Ela fala sobre Media Queries. -->
+        <section class="secao" id="secao-1">
+
+            <!-- Cabeçalho da seção: contém o título do assunto -->
+            <div class="secao-header">
+                <!-- h2 é o título de nível 2 — usado para títulos de seção -->
+                <h2 class="secao-titulo-texto">Media Queries</h2>
+            </div>
+
+            <!-- Corpo da seção: onde vai o conteúdo explicativo -->
+            <div class="secao-corpo">
+
+                <!-- Parágrafo de introdução -->
+                <p class="secao-paragrafo">
+                    Uma <strong>Media Query</strong> é uma regra CSS que permite aplicar estilos
+                    diferentes dependendo do tamanho da tela (ou de outras características do
+                    dispositivo). Com ela, você faz o site se adaptar a celulares, tablets e
+                    computadores — isso é o que chamamos de <em>design responsivo</em>.
+                </p>
+
+                <!-- Segundo parágrafo explicando a sintaxe -->
+                <p class="secao-paragrafo">
+                    A sintaxe básica é: <code class="codigo-inline">@media (condição) { /* estilos */ }</code>.
+                    O bloco de estilos dentro dela só é aplicado quando a condição for verdadeira.
+                    A condição mais comum é <code class="codigo-inline">max-width</code> (largura máxima da tela)
+                    ou <code class="codigo-inline">min-width</code> (largura mínima da tela).
+                </p>
+
+                <!-- 
+                    Bloco de código exibindo um exemplo real de Media Query.
+                    <pre> preserva a indentação e quebras de linha do texto.
+                    <code> indica que o conteúdo é um trecho de código.
+                -->
+                <div class="bloco-codigo-visivel" id="exemplo-media-query">
+                    <p class="bloco-codigo-legenda">Exemplo de código CSS:</p>
+                    <pre class="bloco-codigo-pre"><code>/* Estilo padrão — vale para qualquer tela */
+.caixa-exemplo {
+    background-color: #10439F; /* azul */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Media Query — só vale quando a tela tiver 600px ou menos */
+@media (max-width: 600px) {
+    .caixa-exemplo {
+        background-color: #C65BCF; /* muda para roxo no celular */
+        font-size: 0.9rem;
+    }
+}</code></pre>
+                </div>
+
+                <!-- 
+                    Demonstração visual do efeito da media query.
+                    O elemento .caixa-exemplo vai mudar de cor conforme o tamanho da tela.
+                    Isso é definido lá no style.css com uma @media query real.
+                -->
+                <div class="caixa-exemplo" id="caixa-demonstracao-mq">
+                    <p>Redimensione a janela do navegador para ver a mudança!</p>
+                    <p class="caixa-exemplo-dica">Tela larga = azul &nbsp;|&nbsp; Tela estreita (≤ 600px) = roxo</p>
+                </div>
+
+                <!-- Lista de referências para aprofundamento -->
+                <!-- <ul> é uma lista não-ordenada (com marcadores) -->
+                <div class="secao-referencias">
+                    <p class="referencias-titulo">📚 Referências para aprofundamento:</p>
+                    <ul class="lista-referencias">
+                        <!-- Cada <li> é um item da lista -->
+                        <!-- target="_blank" faz o link abrir em uma nova aba -->
+                        <!-- rel="noopener noreferrer" é uma boa prática de segurança ao usar target="_blank" -->
+                        <li>
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Guides/Media_queries/Using"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="link-referencia">
+                                MDN Web Docs — Usando Media Queries (em português)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="link-referencia">
+                                W3Schools — CSS Responsive Web Design: Media Queries
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECAO 2 -->
+        <section class="secao" id="secao-2">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 3 -->
+        <section class="secao" id="secao-3">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 4 -->
+        <section class="secao" id="secao-4">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 5 -->
+        <section class="secao" id="secao-5">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 6 -->
+        <section class="secao" id="secao-6">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 7 -->
+        <section class="secao" id="secao-7">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+        <!-- SECAO 8 -->
+        <section class="secao" id="secao-8">
+            <div class="secao-header">
+                <div class="placeholder-block secao-titulo"></div>
+            </div>
+            <div class="secao-corpo">
+                <div class="card-grid">
+                    <div class="card vazio"></div>
+                    <div class="card vazio"></div>
+                </div>
+                <div class="bloco-codigo"></div>
+                <div class="placeholder-block botao-secao"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-bloco"></div>
+            <div class="footer-bloco"></div>
+            <div class="footer-bloco"></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="placeholder-block footer-linha"></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
