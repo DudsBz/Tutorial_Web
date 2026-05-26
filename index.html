@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,9 @@
     <title>Tutorial Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- ========== NAVBAR ========== -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-logo"></div>
-
-        <!-- Botao hamburger para mobile -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <ul class="navbar-links" id="navbarLinks">
-            <li><a href="#secao-1">Media Queries</a></li>
-            <li><a href="#secao-2">Layouts Flexíveis</a></li>
-            <li><a href="#secao-3">CSS Grid</a></li>
-            <li><a href="#secao-4">DOM e Eventos</a></li>
-            <li><a href="#secao-5">Interface de Formulário</a></li>
-            <li><a href="#secao-6">Funções</a></li>
-            <li><a href="#secao-7">Arrays e Objetos</a></li>
-            <li><a href="#secao-8">Assíncrono e APIs</a></li>
-        </ul>
-    </nav>
 
     <!-- ========== HERO SECTION ========== -->
     <!-- <header> marca o cabecalho principal da pagina -->
@@ -38,6 +18,11 @@
 
         <!-- Div que centraliza e organiza o conteudo do hero -->
         <div class="hero-content">
+
+            <!-- Logo do polvo adicionada no topo do Hero, fora da Navbar -->
+            <div class="hero-logo-container">
+                <img src="images/logoPolvo.png" alt="Logo Polvo" class="hero-logo-img">
+            </div>
 
             <!-- <h1> e o titulo principal da pagina — deve existir apenas um por pagina -->
             <h1 class="hero-titulo">Tutorial sobre Desenvolvimento Web</h1>
@@ -128,17 +113,13 @@
                         <!-- rel="noopener noreferrer" é uma boa prática de segurança ao usar target="_blank" -->
                         <li>
                             <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Guides/Media_queries/Using"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="link-referencia">
+                                target="_blank" rel="noopener noreferrer" class="link-referencia">
                                 MDN Web Docs — Usando Media Queries (em português)
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="link-referencia">
+                            <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank"
+                                rel="noopener noreferrer" class="link-referencia">
                                 W3Schools — CSS Responsive Web Design: Media Queries
                             </a>
                         </li>
@@ -148,18 +129,123 @@
             </div>
         </section>
 
-        <!-- SECAO 2 -->
+        <!-- LAYOUTS FLEXÍVEIS (FLEXBOX) -->
         <section class="secao" id="secao-2">
             <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
+                <div class="secao-titulo-texto">Layouts flexíveis (Flexbox)</div>
             </div>
             <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
+                <!-- Introdução -->
+                <p class="secao-paragrafo">
+                    O <strong>Flexbox</strong> (Flexible Box Layout) é uma ferramenta que permite
+                    alinhar e distribuir espaço entre itens dentro de um contêiner, mesmo quando seus tamanhos
+                    são desconhecidos ou dinâmicos.
+                </p>
+
+                <!-- Propriedades CSS -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedades CSS:</strong>
+                    <code class="codigo-inline">flex</code> -
+                    <code class="codigo-inline">flex-basis</code> -
+                    <code class="codigo-inline">flex-direction</code> -
+                    <code class="codigo-inline">flex-grow</code> -
+                    <code class="codigo-inline">flex-flow</code> -
+                    <code class="codigo-inline">flex-shrink</code> -
+                    <code class="codigo-inline">flex-wrap</code> -
+                    <code class="codigo-inline">order</code>.
+                </p>
+
+                <!-- Resumo das Propriedades CSS -->
+                <p class="secao-paragrafo"><strong>Resumo das Propriedades CSS:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">flex</code> — atalho para <code class="codigo-inline">flex-grow</code>, <code class="codigo-inline">flex-shrink</code> e <code class="codigo-inline">flex-basis</code> juntos.</li>
+                    <li><code class="codigo-inline">flex-basis</code> — define o tamanho inicial do item antes de o espaço ser distribuído.</li>
+                    <li><code class="codigo-inline">flex-direction</code> — define a direção do eixo principal: <em>row</em> (horizontal) ou <em>column</em> (vertical).</li>
+                    <li><code class="codigo-inline">flex-grow</code> — define o quanto um item pode crescer em relação aos outros.</li>
+                    <li><code class="codigo-inline">flex-shrink</code> — define o quanto um item pode encolher quando o espaço é insuficiente.</li>
+                    <li><code class="codigo-inline">flex-flow</code> — atalho para <code class="codigo-inline">flex-direction</code> + <code class="codigo-inline">flex-wrap</code>.</li>
+                    <li><code class="codigo-inline">flex-wrap</code> — controla se os itens quebram para a linha seguinte quando não cabem.</li>
+                    <li><code class="codigo-inline">order</code> — altera a ordem visual dos itens sem mudar o HTML.</li>
+                </ul>
+
+                <!-- Propriedades de Alinhamento -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedades de Alinhamento:</strong>
+                    <code class="codigo-inline">justify-content</code> -
+                    <code class="codigo-inline">align-items</code> -
+                    <code class="codigo-inline">align-content</code> -
+                    <code class="codigo-inline">align-self</code> -
+                    <code class="codigo-inline">place-content</code> -
+                    <code class="codigo-inline">place-items</code> -
+                    <code class="codigo-inline">row-gap</code> -
+                    <code class="codigo-inline">column-gap</code> -
+                    <code class="codigo-inline">gap</code>.
+                </p>
+
+                <!-- Resumo das Propriedades de Alinhamento -->
+                <p class="secao-paragrafo"><strong>Resumo das Propriedades de Alinhamento:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">justify-content</code> — alinha os itens no eixo principal (ex: centralizar horizontalmente).</li>
+                    <li><code class="codigo-inline">align-items</code> — alinha os itens no eixo cruzado (ex: centralizar verticalmente).</li>
+                    <li><code class="codigo-inline">align-content</code> — alinha as linhas do flex quando há múltiplas linhas e espaço sobrando.</li>
+                    <li><code class="codigo-inline">align-self</code> — sobrescreve o <code class="codigo-inline">align-items</code> para um item individual.</li>
+                    <li><code class="codigo-inline">place-content</code> — atalho para <code class="codigo-inline">align-content</code> + <code class="codigo-inline">justify-content</code>.</li>
+                    <li><code class="codigo-inline">place-items</code> — atalho para <code class="codigo-inline">align-items</code> + <code class="codigo-inline">justify-items</code>.</li>
+                    <li><code class="codigo-inline">row-gap</code> — define o espaço entre as linhas.</li>
+                    <li><code class="codigo-inline">column-gap</code> — define o espaço entre as colunas.</li>
+                    <li><code class="codigo-inline">gap</code> — atalho para <code class="codigo-inline">row-gap</code> + <code class="codigo-inline">column-gap</code>.</li>
+                </ul>
+                <div class="bloco-codigo-visivel">
+                    <pre class="bloco-codigo-pre"><code>
+                        /* Contêiner */
+/* Contêiner — desktop */
+.container {
+    display: flex;          /* ativa o Flexbox */
+    flex-direction: row;    /* itens em linha (padrão) */
+    flex-wrap: wrap;        /* quebra linha se não couber */
+    justify-content: space-between; /* distribui espaço entre os itens */
+    align-items: center;    /* centraliza verticalmente */
+    gap: 1rem;              /* espaço entre os itens */
+}
+
+/* Itens */
+.item {
+    flex-grow: 1;           /* pode crescer para preencher o espaço */
+    flex-shrink: 1;         /* pode encolher se necessário */
+    flex-basis: 200px;      /* tamanho inicial de cada item */
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Responsivo — celular (≤ 600px) */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* empilha os itens verticalmente */
+        align-items: stretch;   /* itens ocupam a largura toda */
+    }
+}
+</code></pre>
                 </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
+
+                <!-- Lista de referências para aprofundamento -->
+                <div class="secao-referencias">
+                    <p class="referencias-titulo">📚 Referências para aprofundamento:</p>
+                    <ul class="lista-referencias">
+                        <li>
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_flexible_box_layout"
+                                target="_blank" rel="noopener noreferrer" class="link-referencia">
+                                MDN Web Docs — CSS Flexible Box Layout (em português)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank"
+                                rel="noopener noreferrer" class="link-referencia">
+                                W3Schools — CSS Flexbox
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
@@ -275,4 +361,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

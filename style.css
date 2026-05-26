@@ -19,80 +19,21 @@ body {
 }
 
 
-/* ==========================================
-   NAVBAR
-   ========================================== */
+/* Logo do Polvo no Hero (Cabeçalho) */
+.hero-logo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto; /* centraliza horizontalmente e dá espaço abaixo */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* borda sutil decorativa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* sombra suave */
+}
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+.hero-logo-img {
     width: 100%;
-    background-color: #10439F;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.8rem 1.5rem;
-    z-index: 100;
-}
-
-.navbar-logo {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 0.35rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.navbar-links li {
-    max-width: 180px;
-}
-
-.navbar-links li:last-child {
-    max-width: 150px;
-}
-
-.navbar-links li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    transition: background-color 0.2s, transform 0.2s;
-    white-space: normal;
-    word-break: break-word;
-}
-
-.navbar-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-}
-
-/* Botao hamburger - escondido no desktop */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
-
-.menu-toggle .bar {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -101,7 +42,7 @@ body {
    ========================================== */
 
 .hero {
-    margin-top: 60px;
+    margin-top: 0;             /* sem navbar, não precisa de espaçamento superior */
     background-color: #10439F;
     padding: 4rem 1.5rem;
     display: flex;
