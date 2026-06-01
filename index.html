@@ -252,114 +252,520 @@
         <!-- SECAO 3 -->
         <section class="secao" id="secao-3">
             <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
+                <h2 class="secao-titulo-texto">CSS Grid Layout Profissional</h2>
             </div>
             <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
+                <!-- Introdução -->
+                <p class="secao-paragrafo">
+                    O <strong>CSS Grid Layout</strong> é um sistema de layout 2D que permite criar
+                    estruturas complexas de linhas e colunas para organizar elementos na página.
+                    Enquanto o Flexbox é ideal para layouts em uma dimensão (linha ou coluna),
+                    o Grid funciona perfeitamente para layouts bidimensionais com mais controle.
+                </p>
+
+                <!-- Diferença entre Grid e Flexbox -->
+                <p class="secao-paragrafo">
+                    <strong>Grid vs Flexbox:</strong> O Flexbox distribui espaço entre itens em uma dimensão,
+                    enquanto o Grid cria uma estrutura de grade com linhas e colunas definidas.
+                    Com Grid, você define o layout da página como um todo e posiciona os itens nas células da grade.
+                </p>
+
+                <!-- Propriedades CSS do Grid no contêiner -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedades do Contêiner Grid:</strong>
+                    <code class="codigo-inline">display: grid</code> -
+                    <code class="codigo-inline">grid-template-columns</code> -
+                    <code class="codigo-inline">grid-template-rows</code> -
+                    <code class="codigo-inline">grid-template-areas</code> -
+                    <code class="codigo-inline">grid-auto-flow</code> -
+                    <code class="codigo-inline">grid-auto-columns</code> -
+                    <code class="codigo-inline">grid-auto-rows</code> -
+                    <code class="codigo-inline">gap</code>.
+                </p>
+
+                <!-- Resumo das Propriedades do Contêiner -->
+                <p class="secao-paragrafo"><strong>Resumo das Propriedades do Contêiner:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">display: grid</code> — ativa o CSS Grid no contêiner.</li>
+                    <li><code class="codigo-inline">grid-template-columns</code> — define o tamanho e número de colunas (ex: <code class="codigo-inline">1fr 1fr 1fr</code> para 3 colunas iguais).</li>
+                    <li><code class="codigo-inline">grid-template-rows</code> — define o tamanho e número de linhas.</li>
+                    <li><code class="codigo-inline">grid-template-areas</code> — define áreas nomeadas para organizar o layout visualmente.</li>
+                    <li><code class="codigo-inline">grid-auto-flow</code> — controla como os itens são posicionados automaticamente (linha ou coluna).</li>
+                    <li><code class="codigo-inline">grid-auto-columns</code> — define o tamanho das colunas criadas automaticamente.</li>
+                    <li><code class="codigo-inline">grid-auto-rows</code> — define o tamanho das linhas criadas automaticamente.</li>
+                    <li><code class="codigo-inline">gap</code> — define o espaço entre linhas e colunas.</li>
+                </ul>
+
+                <!-- Propriedades dos itens do Grid -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedades dos Itens do Grid:</strong>
+                    <code class="codigo-inline">grid-column</code> -
+                    <code class="codigo-inline">grid-row</code> -
+                    <code class="codigo-inline">grid-area</code> -
+                    <code class="codigo-inline">justify-self</code> -
+                    <code class="codigo-inline">align-self</code>.
+                </p>
+
+                <!-- Resumo das Propriedades dos Itens -->
+                <p class="secao-paragrafo"><strong>Resumo das Propriedades dos Itens:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">grid-column</code> — posiciona um item em colunas específicas (ex: <code class="codigo-inline">1 / 3</code> para ocupar da coluna 1 até a 3).</li>
+                    <li><code class="codigo-inline">grid-row</code> — posiciona um item em linhas específicas.</li>
+                    <li><code class="codigo-inline">grid-area</code> — associa um item a uma área nomeada definida no contêiner.</li>
+                    <li><code class="codigo-inline">justify-self</code> — alinha o item horizontalmente dentro de sua célula.</li>
+                    <li><code class="codigo-inline">align-self</code> — alinha o item verticalmente dentro de sua célula.</li>
+                </ul>
+
+                <!-- Exemplo de código com Grid básico -->
+                <div class="bloco-codigo-visivel">
+                    <p class="bloco-codigo-legenda">Exemplo de código CSS Grid:</p>
+                    <pre class="bloco-codigo-pre"><code>/* Contêiner Grid — desktop */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de igual tamanho */
+    grid-template-rows: auto auto;      /* 2 linhas automáticas */
+    gap: 1rem;                          /* espaço entre célula */
+    padding: 1rem;
+}
+
+/* Itens do Grid */
+.grid-item {
+    background-color: #10439F;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Item especial que ocupa 2 colunas */
+.grid-item-destaque {
+    grid-column: 1 / 3; /* ocupa da coluna 1 até a 3 */
+    background-color: #C65BCF;
+}
+
+/* Responsivo — celular (≤ 600px) */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* apenas 1 coluna */
+    }
+
+    .grid-item-destaque {
+        grid-column: 1; /* ocupa apenas 1 coluna */
+    }
+}</code></pre>
                 </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
+
+                <!-- Exemplo usando grid-template-areas -->
+                <p class="secao-paragrafo">
+                    <strong>Usando grid-template-areas para layouts nomeados:</strong>
+                </p>
+                <div class="bloco-codigo-visivel">
+                    <pre class="bloco-codigo-pre"><code>/* Layout com áreas nomeadas */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        "sidebar main sidebar-direita"
+        "footer footer footer";
+    gap: 1rem;
+}
+
+/* Posicionar itens nas áreas */
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.sidebar-direita { grid-area: sidebar-direita; }
+.footer { grid-area: footer; }</code></pre>
+                </div>
+
+                <!-- Unidade 'fr' (fração) -->
+                <p class="secao-paragrafo">
+                    <strong>Unidade <code class="codigo-inline">fr</code> (fração):</strong> A unidade <code class="codigo-inline">fr</code> 
+                    distribui o espaço disponível em frações. Por exemplo, <code class="codigo-inline">1fr 2fr 1fr</code> 
+                    cria 3 colunas onde a coluna do meio é 2 vezes maior que as outras.
+                </p>
+
+                <!-- Lista de referências para aprofundamento -->
+                <div class="secao-referencias">
+                    <p class="referencias-titulo">📚 Referências para aprofundamento:</p>
+                    <ul class="lista-referencias">
+                        <li>
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_grid_layout"
+                                target="_blank" rel="noopener noreferrer" class="link-referencia">
+                                MDN Web Docs — CSS Grid Layout (em português)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank"
+                                rel="noopener noreferrer" class="link-referencia">
+                                W3Schools — CSS Grid Layout
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://cssgridlayout.com/pt-br/" target="_blank"
+                                rel="noopener noreferrer" class="link-referencia">
+                                CSS Grid Layout — Guia Completo (em português)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
         <!-- SECAO 4 -->
         <section class="secao" id="secao-4">
             <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
+                <h2 class="secao-titulo-texto">Manipulação do DOM e Eventos</h2>
             </div>
             <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
+                <!-- Introdução ao DOM -->
+                <p class="secao-paragrafo">
+                    O <strong>DOM</strong> (Document Object Model) é uma representação em estrutura de árvore
+                    do conteúdo de uma página HTML. Cada elemento HTML se torna um objeto JavaScript que você pode
+                    manipular, alterar, ou interagir com eventos como cliques, submissões de formulário, etc.
+                </p>
+
+                <!-- O que é o DOM -->
+                <p class="secao-paragrafo">
+                    Quando o navegador carrega uma página HTML, ele cria uma estrutura hierárquica onde cada tag
+                    HTML se torna um "nó" (node). O JavaScript pode acessar e modificar esses nós dinamicamente,
+                    permitindo criar páginas interativas e responsivas às ações do usuário.
+                </p>
+
+                <!-- Selecionando Elementos -->
+                <p class="secao-paragrafo">
+                    <strong>Métodos de Seleção de Elementos:</strong>
+                    <code class="codigo-inline">getElementById</code> -
+                    <code class="codigo-inline">querySelector</code> -
+                    <code class="codigo-inline">querySelectorAll</code> -
+                    <code class="codigo-inline">getElementsByClassName</code> -
+                    <code class="codigo-inline">getElementsByTagName</code>.
+                </p>
+
+                <!-- Resumo dos Métodos de Seleção -->
+                <p class="secao-paragrafo"><strong>Resumo dos Métodos de Seleção:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">getElementById(id)</code> — seleciona um elemento pelo seu atributo ID (o mais rápido).</li>
+                    <li><code class="codigo-inline">querySelector(seletor)</code> — seleciona o primeiro elemento que corresponde ao seletor CSS.</li>
+                    <li><code class="codigo-inline">querySelectorAll(seletor)</code> — seleciona todos os elementos que correspondem ao seletor CSS.</li>
+                    <li><code class="codigo-inline">getElementsByClassName(classe)</code> — seleciona todos os elementos com a classe especificada.</li>
+                    <li><code class="codigo-inline">getElementsByTagName(tag)</code> — seleciona todos os elementos da tag HTML especificada.</li>
+                </ul>
+
+                <!-- Manipulando Elementos -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedades para Manipular Conteúdo:</strong>
+                    <code class="codigo-inline">textContent</code> -
+                    <code class="codigo-inline">innerHTML</code> -
+                    <code class="codigo-inline">innerText</code> -
+                    <code class="codigo-inline">setAttribute</code> -
+                    <code class="codigo-inline">getAttribute</code>.
+                </p>
+
+                <!-- Resumo de Manipulação -->
+                <p class="secao-paragrafo"><strong>Resumo de Manipulação de Elementos:</strong></p>
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">textContent</code> — altera ou obtém apenas o texto do elemento (sem tags HTML).</li>
+                    <li><code class="codigo-inline">innerHTML</code> — altera ou obtém o conteúdo HTML completo do elemento.</li>
+                    <li><code class="codigo-inline">innerText</code> — similar ao textContent, mas respeita a visibilidade CSS.</li>
+                    <li><code class="codigo-inline">setAttribute(nome, valor)</code> — define ou altera um atributo HTML.</li>
+                    <li><code class="codigo-inline">getAttribute(nome)</code> — obtém o valor de um atributo HTML.</li>
+                </ul>
+
+                <!-- Manipulando Classes CSS -->
+                <p class="secao-paragrafo">
+                    <strong>Propriedade classList para Gerenciar Classes CSS:</strong>
+                    <code class="codigo-inline">classList.add()</code> -
+                    <code class="codigo-inline">classList.remove()</code> -
+                    <code class="codigo-inline">classList.toggle()</code> -
+                    <code class="codigo-inline">classList.contains()</code>.
+                </p>
+
+                <ul class="lista-referencias">
+                    <li><code class="codigo-inline">classList.add(classe)</code> — adiciona uma classe CSS ao elemento.</li>
+                    <li><code class="codigo-inline">classList.remove(classe)</code> — remove uma classe CSS do elemento.</li>
+                    <li><code class="codigo-inline">classList.toggle(classe)</code> — adiciona ou remove uma classe (alterna).</li>
+                    <li><code class="codigo-inline">classList.contains(classe)</code> — verifica se o elemento possui uma classe.</li>
+                </ul>
+
+                <!-- Introdução a Eventos -->
+                <p class="secao-paragrafo">
+                    <strong>Eventos</strong> são ações que o usuário realiza, como clicar em um botão, digitar em um
+                    campo de texto, ou mover o mouse. Com JavaScript, você pode "escutar" (listen) por esses eventos
+                    e executar código em resposta.
+                </p>
+
+                <!-- Adicionando Listeners de Eventos -->
+                <p class="secao-paragrafo">
+                    <strong>Método addEventListener:</strong> A forma moderna e recomendada de adicionar eventos
+                    a um elemento é usando <code class="codigo-inline">addEventListener(tipo, função)</code>.
+                </p>
+
+                <!-- Tipos de Eventos Comuns -->
+                <p class="secao-paragrafo">
+                    <strong>Tipos de Eventos Comuns:</strong>
+                    <code class="codigo-inline">click</code> -
+                    <code class="codigo-inline">submit</code> -
+                    <code class="codigo-inline">change</code> -
+                    <code class="codigo-inline">input</code> -
+                    <code class="codigo-inline">mouseover</code> -
+                    <code class="codigo-inline">mouseout</code> -
+                    <code class="codigo-inline">keydown</code> -
+                    <code class="codigo-inline">keyup</code> -
+                    <code class="codigo-inline">load</code>.
+                </p>
+
+                <!-- Exemplo de código com DOM -->
+                <div class="bloco-codigo-visivel">
+                    <p class="bloco-codigo-legenda">Exemplo de Seleção e Manipulação do DOM:</p>
+                    <pre class="bloco-codigo-pre"><code>/* Selecionar elementos */
+const botao = document.getElementById('meu-botao');
+const paragrafo = document.querySelector('.texto-principal');
+const cards = document.querySelectorAll('.card');
+
+/* Manipular conteúdo */
+paragrafo.textContent = 'Novo texto'; /* altera apenas o texto */
+botao.innerHTML = '&lt;strong&gt;Clique aqui&lt;/strong&gt;'; /* altera com HTML */
+
+/* Manipular atributos */
+botao.setAttribute('disabled', 'true');
+const classe = botao.getAttribute('class');
+
+/* Manipular classes */
+botao.classList.add('ativo');
+botao.classList.remove('desativo');
+botao.classList.toggle('selecionado');
+
+if (botao.classList.contains('ativo')) {
+    console.log('Botão está ativo!');
+}</code></pre>
                 </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
+
+                <!-- Exemplo com eventos -->
+                <div class="bloco-codigo-visivel">
+                    <p class="bloco-codigo-legenda">Exemplo de Listener de Eventos:</p>
+                    <pre class="bloco-codigo-pre"><code>/* Adicionar listener de clique */
+const botao = document.getElementById('enviar');
+
+botao.addEventListener('click', function(evento) {
+    console.log('Botão foi clicado!');
+    botao.textContent = 'Enviando...';
+});
+
+/* Listener de mudança em input */
+const campo = document.getElementById('email');
+
+campo.addEventListener('input', function(evento) {
+    console.log('Valor digitado:', evento.target.value);
+});
+
+/* Listener de submit em formulário */
+const formulario = document.getElementById('meu-formulario');
+
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault(); /* previne o envio padrão */
+    console.log('Formulário foi enviado!');
+});
+
+/* Listener com arrow function (moderna) */
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM carregado completamente!');
+});</code></pre>
+                </div>
+
+                <!-- Objeto Event -->
+                <p class="secao-paragrafo">
+                    <strong>Objeto Event:</strong> Quando um evento ocorre, um objeto <code class="codigo-inline">Event</code>
+                    é passado automaticamente para a função callback. Ele contém informações sobre o evento, como
+                    <code class="codigo-inline">event.target</code> (o elemento que disparou o evento),
+                    <code class="codigo-inline">event.type</code> (tipo de evento), e <code class="codigo-inline">event.preventDefault()</code>
+                    (para cancelar o comportamento padrão).
+                </p>
+
+                <!-- Ciclo de vida do DOM -->
+                <p class="secao-paragrafo">
+                    <strong>Ciclo de Vida do DOM:</strong> O evento <code class="codigo-inline">DOMContentLoaded</code>
+                    é acionado quando o HTML foi completamente carregado e analisado. É o momento certo para adicionar
+                    listeners de eventos e inicializar scripts, garantindo que todos os elementos já existem na página.
+                </p>
+
+                <!-- Lista de referências para aprofundamento -->
+                <div class="secao-referencias">
+                    <p class="referencias-titulo">📚 Referências para aprofundamento:</p>
+                    <ul class="lista-referencias">
+                        <li>
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model"
+                                target="_blank" rel="noopener noreferrer" class="link-referencia">
+                                MDN Web Docs — Document Object Model (em português)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener"
+                                target="_blank" rel="noopener noreferrer" class="link-referencia">
+                                MDN Web Docs — addEventListener (em português)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.w3schools.com/js/js_dom.asp" target="_blank"
+                                rel="noopener noreferrer" class="link-referencia">
+                                W3Schools — JavaScript DOM
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
         <!-- SECAO 5 -->
         <section class="secao" id="secao-5">
             <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
+            <h2 class="secao-titulo-texto">Validação de Interface de Formulário</h2>
             </div>
             <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
+            <!-- Introdução -->
+            <p class="secao-paragrafo">
+                A <strong>validação de formulário</strong> é o processo de verificar se os dados inseridos pelo usuário
+                atendem aos critérios esperados antes de enviar para o servidor. Existem duas abordagens: validação
+                <em>client-side</em> (no navegador com HTML5 e JavaScript) e validação <em>server-side</em> (no servidor).
+            </p>
+
+            <!-- Validação HTML5 -->
+            <p class="secao-paragrafo">
+                <strong>Validação HTML5:</strong> O HTML5 introduziu atributos como <code class="codigo-inline">required</code>,
+                <code class="codigo-inline">type</code>, <code class="codigo-inline">pattern</code>, <code class="codigo-inline">min</code>,
+                <code class="codigo-inline">max</code> e <code class="codigo-inline">maxlength</code> que permitem validação básica
+                sem escrever JavaScript.
+            </p>
+
+            <!-- Atributos de Validação -->
+            <p class="secao-paragrafo"><strong>Atributos de Validação HTML5:</strong></p>
+            <ul class="lista-referencias">
+                <li><code class="codigo-inline">required</code> — torna o campo obrigatório.</li>
+                <li><code class="codigo-inline">type="email"</code> — valida automaticamente o formato de e-mail.</li>
+                <li><code class="codigo-inline">type="number"</code> — aceita apenas números.</li>
+                <li><code class="codigo-inline">type="password"</code> — mascara o texto inserido.</li>
+                <li><code class="codigo-inline">pattern="regex"</code> — valida contra uma expressão regular.</li>
+                <li><code class="codigo-inline">min</code> e <code class="codigo-inline">max</code> — definem valores mínimo e máximo.</li>
+                <li><code class="codigo-inline">maxlength</code> — limita o número de caracteres.</li>
+            </ul>
+
+            <!-- Validação com JavaScript -->
+            <p class="secao-paragrafo">
+                <strong>Validação com JavaScript:</strong> Para validações mais complexas, use JavaScript para acessar
+                os valores dos campos e implementar lógica customizada. A propriedade <code class="codigo-inline">validity</code>
+                fornece informações detalhadas sobre o estado de validação de um elemento.
+            </p>
+
+            <!-- Exemplo HTML5 -->
+            <div class="bloco-codigo-visivel">
+                <p class="bloco-codigo-legenda">Exemplo de Formulário com Validação HTML5:</p>
+                <pre class="bloco-codigo-pre"><code>&lt;form id="formulario"&gt;
+        &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+        &lt;input 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        required 
+        minlength="3" 
+        maxlength="50"
+        &gt;
+
+        &lt;label for="email"&gt;E-mail:&lt;/label&gt;
+        &lt;input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required
+        &gt;
+
+        &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+        &lt;input 
+        type="number" 
+        id="idade" 
+        name="idade" 
+        min="18" 
+        max="120"
+        &gt;
+
+        &lt;label for="telefone"&gt;Telefone:&lt;/label&gt;
+        &lt;input 
+        type="tel" 
+        id="telefone" 
+        name="telefone" 
+        pattern="[0-9]{10,11}"
+        &gt;
+
+        &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;</code></pre>
+            </div>
+
+            <!-- Validação com JavaScript -->
+            <div class="bloco-codigo-visivel">
+                <p class="bloco-codigo-legenda">Exemplo de Validação com JavaScript:</p>
+                <pre class="bloco-codigo-pre"><code>const formulario = document.getElementById('formulario');
+    const email = document.getElementById('email');
+
+    /* Validação ao submeter o formulário */
+    formulario.addEventListener('submit', function(evento) {
+        evento.preventDefault();
+
+        /* Validar campo de e-mail */
+        if (!email.validity.valid) {
+        if (email.validity.valueMissing) {
+            alert('E-mail é obrigatório!');
+        } else if (email.validity.typeMismatch) {
+            alert('Por favor, insira um e-mail válido!');
+        }
+        return;
+        }
+
+        /* Se chegou aqui, tudo está válido */
+        alert('Formulário enviado com sucesso!');
+        formulario.submit();
+    });
+
+    /* Validação em tempo real */
+    email.addEventListener('blur', function() {
+        if (email.value && !email.validity.valid) {
+        email.style.borderColor = 'red';
+        } else {
+        email.style.borderColor = 'green';
+        }
+    });</code></pre>
+            </div>
+
+            <!-- Propriedades de Validity -->
+            <p class="secao-paragrafo">
+                <strong>Propriedades do Objeto validity:</strong>
+                <code class="codigo-inline">valid</code> -
+                <code class="codigo-inline">valueMissing</code> -
+                <code class="codigo-inline">typeMismatch</code> -
+                <code class="codigo-inline">patternMismatch</code> -
+                <code class="codigo-inline">tooShort</code> -
+                <code class="codigo-inline">tooLong</code> -
+                <code class="codigo-inline">rangeUnderflow</code> -
+                <code class="codigo-inline">rangeOverflow</code>.
+            </p>
+
+            <!-- Lista de referências -->
+            <div class="secao-referencias">
+                <p class="referencias-titulo">📚 Referências para aprofundamento:</p>
+                <ul class="lista-referencias">
+                <li>
+                    <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Form_validation"
+                    target="_blank" rel="noopener noreferrer" class="link-referencia">
+                    MDN Web Docs — Validação de Formulários (em português)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/js/js_validation.asp" target="_blank"
+                    rel="noopener noreferrer" class="link-referencia">
+                    W3Schools — JavaScript Form Validation
+                    </a>
+                </li>
+                </ul>
+            </div>
+
             </div>
         </section>
-
-        <!-- SECAO 6 -->
-        <section class="secao" id="secao-6">
-            <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
-            </div>
-            <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
-            </div>
-        </section>
-
-        <!-- SECAO 7 -->
-        <section class="secao" id="secao-7">
-            <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
-            </div>
-            <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
-            </div>
-        </section>
-
-        <!-- SECAO 8 -->
-        <section class="secao" id="secao-8">
-            <div class="secao-header">
-                <div class="placeholder-block secao-titulo"></div>
-            </div>
-            <div class="secao-corpo">
-                <div class="card-grid">
-                    <div class="card vazio"></div>
-                    <div class="card vazio"></div>
-                </div>
-                <div class="bloco-codigo"></div>
-                <div class="placeholder-block botao-secao"></div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer" id="footer">
-        <div class="footer-content">
-            <div class="footer-bloco"></div>
-            <div class="footer-bloco"></div>
-            <div class="footer-bloco"></div>
-        </div>
-        <div class="footer-bottom">
-            <div class="placeholder-block footer-linha"></div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
